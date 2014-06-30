@@ -42,7 +42,7 @@ def run_cmd(cmd):
   import subprocess
   #print 'Run : %s' % cmd
   p = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-  result = [line.decode('utf8') for line in p.stdout.readlines()]
+  result = [line for line in p.stdout.readlines()]
   retval = p.wait()
   return retval, result
 

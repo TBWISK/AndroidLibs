@@ -20,4 +20,7 @@ androidlibs_config=[
 {"name": "umeng",
  "repo": "https://github.com/toray/umeng-lib.git",
  "tags": ["master", "1.0.0"]},
+{"name": "wandoujiaSDK",
+ "repo": "https://github.com/toray/wandoujiaSDK-lib.git",
+ "tags": ["master"]},
  ]

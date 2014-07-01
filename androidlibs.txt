@@ -23,4 +23,7 @@ androidlibs_config=[
 {"name": "wandoujiaSDK",
  "repo": "https://github.com/toray/wandoujiaSDK-lib.git",
  "tags": ["master"]},
+{"name": "support_v7",
+ "repo": "https://github.com/toray/support_v7-lib.git",
+ "tags": ["master"]},
  ]

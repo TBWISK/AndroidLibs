@@ -26,4 +26,7 @@ androidlibs_config=[
 {"name": "support_v7",
  "repo": "https://github.com/toray/support_v7-lib.git",
  "tags": ["master"]},
+{"name": "widget",
+ "repo": "https://github.com/toray/widget-lib.git",
+ "tags": ["master"]},
  ]

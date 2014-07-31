@@ -29,4 +29,7 @@ androidlibs_config=[
 {"name": "widget",
  "repo": "https://github.com/toray/widget-lib.git",
  "tags": ["master"]},
+{"name": "youmi",
+ "repo": "https://github.com/toray/youmi-lib.git",
+ "tags": ["master"]},
  ]

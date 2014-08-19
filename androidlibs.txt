@@ -32,4 +32,10 @@ androidlibs_config=[
 {"name": "youmi",
  "repo": "https://github.com/toray/youmi-lib.git",
  "tags": ["master"]},
+{"name": "sentry",
+ "repo": "https://gitcafe.com/bigbigtooth/sentry-lib.git",
+ "tags": ["master"]},
+{"name": "SMSSDK",
+ "repo": "https://gitcafe.com/bigbigtooth/SMSSDK-lib.git",
+ "tags": ["master"]},
  ]

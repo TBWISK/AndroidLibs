@@ -50,4 +50,7 @@ androidlibs_config=[
 {"name": "TingyunSDK",
  "repo": "https://github.com/toray/TingyunSDK-lib.git",
  "tags": ["master", "1.2.1"]},
+{"name": "MTRecorder",
+ "repo": "gitosis@sutui.me:MTRecorder-android.git",
+ "tags": ["master"]},
  ]

@@ -53,4 +53,7 @@ androidlibs_config=[
 {"name": "MTRecorder",
  "repo": "gitosis@sutui.me:MTRecorder-android.git",
  "tags": ["master"]},
+{"name": "emojicon",
+ "repo": "https://github.com/toray/emojicon-lib.git",
+ "tags": ["master"]},
  ]

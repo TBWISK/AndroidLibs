@@ -56,4 +56,7 @@ androidlibs_config=[
 {"name": "emojicon",
  "repo": "https://github.com/toray/emojicon-lib.git",
  "tags": ["master"]},
+{"name": "douban",
+ "repo": "https://github.com/toray/douban-lib.git",
+ "tags": ["master"]},
  ]

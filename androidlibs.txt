@@ -59,4 +59,7 @@ androidlibs_config=[
 {"name": "douban",
  "repo": "https://github.com/toray/douban-lib.git",
  "tags": ["master"]},
+{"name": "XiamiSDK",
+ "repo": "https://github.com/toray/XiamiSDK-lib.git",
+ "tags": ["master"]},
  ]

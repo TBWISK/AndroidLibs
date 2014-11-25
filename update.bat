@@ -1,1 +1,1 @@
-bin\androidlibs.exe update
+@bin\androidlibs.exe update

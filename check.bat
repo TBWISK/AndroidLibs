@@ -1,1 +1,2 @@
-@bin\check_status.exe
+@echo off
+bin\check_status.exe

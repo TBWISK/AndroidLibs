@@ -4,8 +4,19 @@ import sys
 import os
 
 __version__ = "1.0"
-current_path = os.path.abspath('.')
 
+
+def show_help():
+  help_text = u'''
+使用说明: check_status [--version] [-p d:/androidlibs] [-h]
+
+参数说明：
+  --version       版本号
+  -p              指定AndroidLibs目录
+  -h              帮助文档
+
+  '''
+  print help_text
 
 def run_cmd(cmd):
     import subprocess
@@ -22,6 +33,10 @@ def run_cmd_async(cmd):
 
 
 def do_check():
+    current_path = os.path.abspath('.')
+    if '-p' in sys.argv and sys.argv[sys.argv.index('-p')+1]:
+        current_path = sys.argv[sys.argv.index('-p')+1]
+    os.chdir(current_path)
     try:
         no_commits = []
         #print u'开始检查AndroidLibs提交情况......'
@@ -29,7 +44,7 @@ def do_check():
         i = 0
         for lib_dir in fs:
             i += 1
-            print 'Please waiting...%s/%s\r' % (i, len(fs)),
+            print u'Please waiting...%s/%s\r' % (i, len(fs)),
             if lib_dir.endswith('-lib') and os.path.isdir(lib_dir):
                 master_dir = '%s/%s/master' % (current_path, lib_dir)
                 if os.path.exists(master_dir):
@@ -45,17 +60,17 @@ def do_check():
                             no_commits.append(lib_dir)
                             
         if len(no_commits) == 0:
-            print u'AndroidLibs全部提交啦，你可以洗洗睡了！！！'
+            print u'All android libs already commited, good day !!!'
         else:
-            print u'工程 %s 没有提交，快滚去提交...' % ",".join(no_commits)
+            print u'Projects [%s] not commit...' % ",".join(no_commits)
     except Exception, e:
-        print u'出错啦！', e
-
-
-if len(sys.argv) <= 1:
-    do_check()
-    sys.exit()
+        print e
 
 if '--version' in sys.argv:
     print 'Version: %s' % __version__
 
+if '-h' in sys.argv:
+  show_help()
+  sys.exit()
+
+do_check()

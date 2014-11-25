@@ -3,22 +3,22 @@
 import sys
 import os
 
-__version__ = "0.1"
+__version__ = "1.0"
 current_path = os.path.abspath('.')
 
 def show_help():
   help_text = '''
-Ê¹ÓÃËµÃ÷: androidlibs [--version] [-c androidlibs.txt] [-h] [Ö¸Áî]
+ä½¿ç”¨è¯´æ˜: androidlibs [--version] [-c androidlibs.txt] [-h] [æŒ‡ä»¤]
   
-²ÎÊıËµÃ÷£º
-  --version       °æ±¾ºÅ
-  -c              Ö¸¶¨androidlibs.txtµÄÍêÕûÂ·¾¶
-  -h              °ïÖúÎÄµµ
+å‚æ•°è¯´æ˜ï¼š
+  --version       ç‰ˆæœ¬å·
+  -c              æŒ‡å®šandroidlibs.txtçš„å®Œæ•´è·¯å¾„
+  -h              å¸®åŠ©æ–‡æ¡£
 
-Ö¸ÁîËµÃ÷£º
-  update          ¸üĞÂ´úÂë¡£ÒÔÍ¬²½·½Ê½¸üĞÂ£¬¿ÉÒÔ¿´µ½Ã¿¸ö¹¤³ÌµÄ¸üĞÂ½á¹û
-  update-async    Òì²½¸üĞÂ´úÂë¡£ÎŞ·¨¿´µ½Ã¿¸ö¹¤³ÌµÄ¸üĞÂ½á¹û
-  clean           Çå³ıËùÓĞLibrary¹¤³Ì
+æŒ‡ä»¤è¯´æ˜ï¼š
+  update          æ›´æ–°ä»£ç ã€‚ä»¥åŒæ­¥æ–¹å¼æ›´æ–°ï¼Œå¯ä»¥çœ‹åˆ°æ¯ä¸ªå·¥ç¨‹çš„æ›´æ–°ç»“æœ
+  update-async    å¼‚æ­¥æ›´æ–°ä»£ç ã€‚æ— æ³•çœ‹åˆ°æ¯ä¸ªå·¥ç¨‹çš„æ›´æ–°ç»“æœ
+  clean           æ¸…é™¤æ‰€æœ‰Libraryå·¥ç¨‹
   '''
   print help_text
 
@@ -31,7 +31,7 @@ def get_config():
   config_str = [line.replace("\n","") for line in config_file.readlines()]
   config_str = "".join(config_str)
   exec(config_str)
-  print 'ÕÒµ½ÒÔÏÂLibrary¹¤³Ì£¬×¼±¸¿ªÊ¼¸üĞÂÀ²...'
+  print 'æ‰¾åˆ°ä»¥ä¸‹Libraryå·¥ç¨‹ï¼Œå‡†å¤‡å¼€å§‹æ›´æ–°å•¦...'
   print '============'
   for tag in androidlibs_config:
     print ' ', tag['name']
@@ -52,12 +52,12 @@ def run_cmd_async(cmd):
   
 def do_update(async=False):
   try:
-    print 'Ê×ÏÈ¸üĞÂ×îĞÂµÄLibrary¹¤³ÌÅäÖÃ'
+    print 'é¦–å…ˆæ›´æ–°æœ€æ–°çš„Libraryå·¥ç¨‹é…ç½®'
     ret, result = run_cmd("git pull origin master")
     if ret == 0:
-      print 'Library¹¤³ÌÅäÖÃ¸üĞÂÍê±Ï'
+      print 'Libraryå·¥ç¨‹é…ç½®æ›´æ–°å®Œæ¯•'
     else:
-      print 'Library¹¤³ÌÅäÖÃ¸üĞÂÊ§°Ü£¡£¡£¡Çë¼ì²éÄãµ±Ç°Ä¿Â¼ÊÇ·ñÕıÈ·£¬ÔÙÊÔÒ»´Î¡£'
+      print 'Libraryå·¥ç¨‹é…ç½®æ›´æ–°å¤±è´¥ï¼ï¼ï¼è¯·æ£€æŸ¥ä½ å½“å‰ç›®å½•æ˜¯å¦æ­£ç¡®ï¼Œå†è¯•ä¸€æ¬¡ã€‚'
       sys.exit()
   except Exception, e:
     print e
@@ -68,7 +68,7 @@ def do_update(async=False):
       for lib in config:
       	if lib['tags']:
           for tag in lib['tags']:
-            print '¿ªÊ¼¸üĞÂ %s ¹¤³Ì %s ·ÖÖ§£¬ÇëÉÔºò¡­¡­' % (lib['name'], tag)
+            print 'å¼€å§‹æ›´æ–° %s å·¥ç¨‹ %s åˆ†æ”¯ï¼Œè¯·ç¨å€™â€¦â€¦' % (lib['name'], tag)
             target = '%s-lib/master' % lib['name'] if tag == 'master'else '%s-lib/releases/%s' % (lib['name'], tag)
             if os.path.exists(target):
               if tag == 'master':
@@ -79,11 +79,11 @@ def do_update(async=False):
                 else:
                   ret, result = run_cmd(cmd)
                   if ret != 0:
-                    print 'master·ÖÖ§¸üĞÂÊ§°Ü'
+                    print 'masteråˆ†æ”¯æ›´æ–°å¤±è´¥'
                 os.chdir(current_path)
               else:
-                print '%s ÒÑ¾­ÓĞÁË£¬ÎÒ¾Í²»¸üĞÂÀ²¡£' % target
-                 
+                print '%s å·²ç»æœ‰äº†ï¼Œæˆ‘å°±ä¸æ›´æ–°å•¦ã€‚' % target
+
             else:
               if tag == 'master':
                 cmd = "git clone %s %s" % (lib['repo'], target)
@@ -94,18 +94,18 @@ def do_update(async=False):
               else:
                 ret, result = run_cmd(cmd)
                 if ret != 0:
-                  print '%s·ÖÖ§¸üĞÂÊ§°Ü' % tag
-            print ' %s ¹¤³Ì¸üĞÂÍê±Ï¡£' % lib['name']
+                  print '%såˆ†æ”¯æ›´æ–°å¤±è´¥' % tag
+            print ' %s å·¥ç¨‹æ›´æ–°å®Œæ¯•ã€‚' % lib['name']
             print ' '
-          
+
   except IOError, ioe:
-    print 'ÕÒ²»µ½ÅäÖÃÎÄ¼ş¡£', e
+    print 'æ‰¾ä¸åˆ°é…ç½®æ–‡ä»¶ã€‚', e
   except Exception, e:
-    print '³ö´íÀ²£¡', e
+    print 'å‡ºé”™å•¦ï¼', e
   
 def do_clean():
   run_cmd("rm -rf *-lib")
-  
+
 if len(sys.argv) <= 1:
   show_help()
   sys.exit()
@@ -121,7 +121,6 @@ if 'update' in sys.argv:
     print e
   sys.exit()
 
-
 if 'update-async' in sys.argv:
   try:
     do_update(True)
@@ -129,11 +128,12 @@ if 'update-async' in sys.argv:
     print e
   sys.exit()
 
-
 if 'clean' in sys.argv:
   try:
     do_clean()
   except Exception, e:
     print e
 
+if '--version' in sys.argv:
+    print 'Version: %s' % __version__
 

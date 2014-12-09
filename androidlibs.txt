@@ -62,4 +62,7 @@ androidlibs_config=[
 {"name": "XiamiSDK",
  "repo": "https://github.com/toray/XiamiSDK-lib.git",
  "tags": ["master"]},
+{"name": "WechatPay",
+ "repo": "https://github.com/toray/WechatPay.git",
+ "tags": ["master"]},
  ]

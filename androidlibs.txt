@@ -66,6 +66,6 @@ androidlibs_config=[
  "repo": "https://github.com/toray/WechatPay.git",
  "tags": ["master"]},
 {"name": "Qinjia",
- "repo": "https://github.com/toray/Qinjia.git",
+ "repo": "https://github.com/toray/Qinjia-lib.git",
  "tags": ["master"]},
  ]

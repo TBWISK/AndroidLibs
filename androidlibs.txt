@@ -65,4 +65,7 @@ androidlibs_config=[
 {"name": "WechatPay",
  "repo": "https://github.com/toray/WechatPay.git",
  "tags": ["master"]},
+ {"name": "RainbowSDK",
+ "repo": "https://coding.net/jclang/rainbow-java.git",
+ "tags": ["master"]},
  ]

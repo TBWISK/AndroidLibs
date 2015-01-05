@@ -68,4 +68,7 @@ androidlibs_config=[
 {"name": "Qinjia",
  "repo": "https://github.com/toray/Qinjia-lib.git",
  "tags": ["master"]},
+{"name": "RainbowSDK",
+ "repo": "https://coding.net/jclang/rainbow-java.git",
+ "tags": ["master"]},
  ]

@@ -37,7 +37,7 @@ androidlibs_config=[
  "tags": ["master"]},
 {"name": "SMSSDK",
  "repo": "https://gitcafe.com/bigbigtooth/SMSSDK-lib.git",
- "tags": ["master", "1.0.2", "1.1.0"]},
+ "tags": ["master", "1.0.2", "1.1.0", "1.1.9"]},
  {"name": "RestClient",
  "repo": "https://github.com/toray/RestClient-lib.git",
  "tags": ["master", "1.0.0"]},

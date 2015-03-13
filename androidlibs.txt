@@ -71,4 +71,7 @@ androidlibs_config=[
 {"name": "RainbowSDK",
  "repo": "https://github.com/toray/Rainbow-lib.git",
  "tags": ["master"]},
+{"name": "imageloader",
+ "repo": "https://github.com/toray/imageloader-lib.git",
+ "tags": ["master"]},
  ]

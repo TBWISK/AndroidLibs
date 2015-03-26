@@ -10,7 +10,7 @@ androidlibs_config=[
  "tags": ["master", "1.0.0"]},
 {"name": "shareSDK",
  "repo": "https://github.com/toray/shareSDK-lib.git",
- "tags": ["master", "1.0.0", "2.4.0"]},
+ "tags": ["master", "1.0.0", "2.4.0", "2.4.1"]},
 {"name": "alipay",
  "repo": "https://github.com/toray/alipay-lib.git",
  "tags": ["master", "1.0.0", "1.0.1"]},

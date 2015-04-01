@@ -3,7 +3,7 @@ androidlibs_config=[
  "repo": "https://github.com/toray/QiniuSDK-lib.git",
  "tags": ["master", "6.1.0", "7.0.3"]},
 {"name": "volley",
- "repo": "https://github.com/mcxiaoke/android-volley.git",
+ "repo": "https://github.com/toray/android-volley.git",
  "tags": ["master", "1.0.2"]},
 {"name": "AMap",
  "repo": "https://github.com/toray/AMap-lib.git",
@@ -73,8 +73,5 @@ androidlibs_config=[
  "tags": ["master"]},
 {"name": "imageloader",
  "repo": "https://github.com/toray/imageloader-lib.git",
- "tags": ["master"]},
- {"name": "ProxyVolley",
- "repo": "https://github.com/toray/ProxyVolley.git",
  "tags": ["master"]},
  ]

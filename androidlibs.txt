@@ -4,7 +4,7 @@ androidlibs_config=[
  "tags": ["master", "6.1.0", "7.0.3"]},
 {"name": "volley",
  "repo": "https://github.com/toray/android-volley.git",
- "tags": ["master", "1.0.2"]},
+ "tags": ["master", "1.0.2", "v1.0.0"]},
 {"name": "AMap",
  "repo": "https://github.com/toray/AMap-lib.git",
  "tags": ["master", "1.0.0"]},

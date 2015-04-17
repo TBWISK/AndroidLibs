@@ -74,4 +74,7 @@ androidlibs_config=[
 {"name": "imageloader",
  "repo": "https://github.com/toray/imageloader-lib.git",
  "tags": ["master"]},
+{"name": "FontManager",
+ "repo": "https://github.com/toray/FontManager-lib.git",
+ "tags": ["master"]},
  ]

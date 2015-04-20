@@ -77,7 +77,7 @@ androidlibs_config=[
 {"name": "FontManager",
  "repo": "https://github.com/toray/FontManager-lib.git",
  "tags": ["master"]},
-{"name": “MoneyWall”,
+{"name": "MoneyWall",
  "repo": "https://github.com/toray/MoneyWall.git",
  "tags": ["master"]},
  ]

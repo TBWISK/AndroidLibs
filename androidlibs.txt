@@ -80,4 +80,10 @@ androidlibs_config=[
 {"name": "MoneyWall",
  "repo": "https://github.com/toray/MoneyWall-lib.git",
  "tags": ["master"]},
+ {"name": "Qzone-lib",
+ "repo": "https://git.coding.net/toraydavid/Qzone-lib.git",
+ "tags": ["master"]},
+  {"name": "Wechat-lib",
+ "repo": "https://git.coding.net/toraydavid/Wechat-lib.git",
+ "tags": ["master"]},
  ]

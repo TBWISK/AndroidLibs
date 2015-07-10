@@ -86,4 +86,7 @@ androidlibs_config=[
   {"name": "Wechat-lib",
  "repo": "https://git.coding.net/toraydavid/Wechat-lib.git",
  "tags": ["master"]},
+  {"name": "frescolib",
+ "repo": " https://github.com/toray/fresco-lib.git",
+ "tags": ["master"]},
  ]

@@ -89,4 +89,7 @@ androidlibs_config=[
   {"name": "frescolib",
  "repo": " https://github.com/toray/fresco-lib.git",
  "tags": ["master"]},
+   {"name": "BadgeView",
+ "repo": " https://github.com/stefanjauker/BadgeView.git",
+ "tags": ["master"]},
  ]

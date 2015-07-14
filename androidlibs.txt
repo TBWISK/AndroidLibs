@@ -92,4 +92,8 @@ androidlibs_config=[
    {"name": "BadgeView",
  "repo": " https://github.com/stefanjauker/BadgeView.git",
  "tags": ["master"]},
+{"name": "checkinSDK",
+ "repo": " https://git.coding.net/toraydavid/checkinSDK-lib.git",
+ "tags": ["master"]},
+
  ]

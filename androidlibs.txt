@@ -87,7 +87,7 @@ androidlibs_config=[
  "repo": "https://git.coding.net/toraydavid/Wechat-lib.git",
  "tags": ["master"]},
   {"name": "frescolib",
- "repo": " https://github.com/toray/fresco-lib.git",
+ "repo": " https://github.com/toray/frescolib.git",
  "tags": ["master"]},
    {"name": "BadgeView",
  "repo": " https://github.com/stefanjauker/BadgeView.git",

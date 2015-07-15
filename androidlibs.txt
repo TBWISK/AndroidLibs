@@ -95,5 +95,7 @@ androidlibs_config=[
 {"name": "checkinSDK",
  "repo": " https://git.coding.net/toraydavid/checkinSDK-lib.git",
  "tags": ["master"]},
-
+{"name": "YouShareSDK",
+ "repo": " https://git.coding.net/toraydavid/YouShareSDK.git",
+ "tags": ["master"]},
  ]

@@ -1,7 +1,7 @@
 androidlibs_config=[
 {"name": "QiniuSDK",
  "repo": "https://github.com/toray/QiniuSDK-lib.git",
- "tags": ["master", "6.1.0", "7.0.3"]},
+ "tags": ["master", "6.1.0", "7.0.3","7.0.7"]},
 {"name": "volley",
  "repo": "https://github.com/toray/android-volley.git",
  "tags": ["master", "1.0.2", "v1.0.0"]},

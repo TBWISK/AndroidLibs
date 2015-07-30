@@ -98,4 +98,7 @@ androidlibs_config=[
 {"name": "YouShareSDK",
  "repo": " https://git.coding.net/toraydavid/YouShareSDK.git",
  "tags": ["master"]},
+ {"name": "YouTaskSDK",
+ "repo": "https://git.coding.net/tbwisk/YouTaskSDK.git",
+ "tags": ["master"]},
  ]

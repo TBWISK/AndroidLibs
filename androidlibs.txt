@@ -101,10 +101,7 @@ androidlibs_config=[
  {"name": "YouTaskSDK",
  "repo": "https://git.coding.net/tbwisk/YouTaskSDK.git",
  "tags": ["master"]},
- {"name": "wxtheme-widgets",
- "repo": "https://git.coding.net/tbwisk/wxtheme-widgets.git",
- "tags": ["master"]},
- {"name": "YouMoneyWall-lib",
+  {"name": "YouMoneyWall-lib",
  "repo": "git@github.com:toray/YouMoneyWall-lib.git",
  "tags": ["master"]},
  ]

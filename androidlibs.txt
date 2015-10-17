@@ -101,4 +101,7 @@ androidlibs_config=[
  {"name": "YouTaskSDK",
  "repo": "https://git.coding.net/tbwisk/YouTaskSDK.git",
  "tags": ["master"]},
+ {"name": "SMSSDK-YouYou",
+ "repo": "https://git.coding.net/toraydavid/SMSSDK-lib.git",
+ "tags": ["master"]},
  ]

